@@ -9,8 +9,13 @@
     font-weight: bold;
     font-size: 1.5em;
   }
-</style>
 
+  .post-meta-details {
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+  }
+</style>
+<div class="post-meta-details">
 <h1 align="center">Listing all post</h1>
 <% @post.each do |post| %>
   <div class="row">
@@ -21,6 +26,7 @@
         </div>
         <div class="post-body">
           <%= truncate(post.content, length: 100) %>
+
         </div>
         <div class="post-actions">
           <%= link_to "Edit", edit_post_path(post), class: "btn btn-xs btn-primary" %>
@@ -30,3 +36,4 @@
     </div>
   </div>
 <% end %>
+</div>
