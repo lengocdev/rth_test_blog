@@ -1,5 +1,5 @@
 <h1>Edit Post</h1>
-<%= render 'shared/error' %>
+<%= render 'shared/error' , obj: @post %>
 <%= render 'form' %>
 <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure ?'} %>
 <%= link_to 'Back', posts_path %>

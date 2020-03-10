@@ -1,5 +1,5 @@
 <h1>Create an post</h1>
-<%= render 'shared/error' %>
+<%= render 'shared/error' , obj: @post%>
 <%= form_for @post do |f| %>
   <p>
     <%= f.label :title %> <br>
