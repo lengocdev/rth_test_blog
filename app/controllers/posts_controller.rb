@@ -1,6 +1,14 @@
 class PostsController < ApplicationController
+  def index
+    @post = Post.all
+  end
+
   def new
     @post = Post.new
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def show
@@ -16,6 +24,17 @@ class PostsController < ApplicationController
     else
       render 'new'
       end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = 'Post was updated'
+      redirect_to post_path(@post)
+    else
+      flash[:notice] = 'Post was not updated'
+      render 'edit'
+    end
   end
 
   private
