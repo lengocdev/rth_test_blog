@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     # render plain: params[:post].inspect
     @post = Post.new(post_params)
-    @post.user = user.first
+    @post.user = User.first
     if @post.save
       flash[:success] = 'Post was successfully created'
       redirect_to post_path(@post)
